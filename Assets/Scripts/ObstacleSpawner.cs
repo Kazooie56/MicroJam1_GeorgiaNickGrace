@@ -9,7 +9,7 @@ public class MountainSpawner : MonoBehaviour
     public RectTransform witch;        // drag the witch's RectTransform here
 
     [Header("Spawn Timing")]
-    public float spawnInterval = 20f;
+    public float spawnInterval = 5f;
 
     [Header("Spawn Position")]
     public float bottomSpawnY = -250f;
