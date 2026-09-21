@@ -2063,6 +2063,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1190923321}
   m_CullTransparentMesh: 1
+--- !u!1 &1222958451
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1222958452}
+  - component: {fileID: 1222958453}
+  m_Layer: 0
+  m_Name: UIManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1222958452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222958451}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -0, z: -0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2118340409}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1222958453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222958451}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7d390de4cacb6b4d8eb2f55fd6bc671, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIManager
+  mainMenuUI: {fileID: 1426487492}
+  instructionsScreenUI: {fileID: 229029392}
+  gamePlayUI: {fileID: 1730917811}
+  pauseScreenUI: {fileID: 650527716}
+  gameOverScreenUI: {fileID: 633584500}
 --- !u!1 &1233527469
 GameObject:
   m_ObjectHideFlags: 0
@@ -4092,8 +4142,15 @@ RectTransform:
   - {fileID: 1730917812}
   - {fileID: 650527717}
   - {fileID: 633584501}
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+  m_Father: {fileID: 1222958452}
+=======
+>>>>>>> Stashed changes
   - {fileID: 162808935}
   m_Father: {fileID: 0}
+>>>>>>> 1ac15c875bd87ca9adbc951868627494c9c6e930
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4228,5 +4285,5 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
-  - {fileID: 2118340409}
+  - {fileID: 1222958452}
   - {fileID: 1142569}
