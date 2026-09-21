@@ -21,7 +21,7 @@ public class MountainSpawner : MonoBehaviour
     {
         // Spawn just off the right edge, destroy just off the left edge
         float halfWidth = canvasRect.rect.width / 2f;
-        spawnX = halfWidth + 100f;
+        spawnX = halfWidth + 300f;
         destroyX = -halfWidth - 100f;
 
         StartCoroutine(SpawnLoop());

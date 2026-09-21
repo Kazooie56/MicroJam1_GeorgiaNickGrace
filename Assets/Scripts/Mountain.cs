@@ -29,7 +29,7 @@ public class Mountain : MonoBehaviour
         pos.x -= speed * Time.deltaTime;
         rectTransform.anchoredPosition = pos;
 
-        // Clean up once off-screen so we don't leak objects
+        // Clean up once off-screen
         if (pos.x < offscreenDeletion)
         {
             Destroy(gameObject);

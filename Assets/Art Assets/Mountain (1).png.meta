@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 83f1ff6018a0b8e488e47dfc4a4597f8
+guid: 280015751588ec744a52aa6946ad06c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7361244413759610863
-    second: placeholder witch_0
+      213: 2091386154721360174
+    second: Mountain (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: placeholder witch_0
+      name: Mountain (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 612
-        height: 487
+        width: 900
+        height: 1184
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fef58f2fac4682660800000000000000
-      internalID: 7361244413759610863
+      spriteID: e29365880a8160d10800000000000000
+      internalID: 2091386154721360174
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      placeholder witch_0: 7361244413759610863
+      Mountain (1)_0: 2091386154721360174
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
