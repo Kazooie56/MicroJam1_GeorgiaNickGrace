@@ -9,7 +9,8 @@ public class MountainSpawner : MonoBehaviour
     public RectTransform witch;        // drag the witch's RectTransform here
 
     [Header("Spawn Timing")]
-    public float spawnInterval = 5f;
+    public float minimumSpawnInterval = 5f;
+    public float maximumSpawnInterval = 5f;
 
     [Header("Spawn Position")]
     public float bottomSpawnY = -250f;
@@ -33,7 +34,7 @@ public class MountainSpawner : MonoBehaviour
     {
         while (true)
         {
-            float wait = spawnInterval;             // include a math formula that adapts the score later
+            float wait = minimumSpawnInterval;             // include a math formula that adapts the score later
             yield return new WaitForSeconds(wait);
             SpawnMountain();
         }

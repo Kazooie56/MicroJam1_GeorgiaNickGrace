@@ -11,6 +11,8 @@ public class Mountain : MonoBehaviour
     public Vector2 hitboxSize = new Vector2(150f, 150f);
     public Vector2 hitboxOffset = Vector2.zero;
 
+    // 
+
     private RectTransform rectTransform;
     private float offscreenDeletion = -1500f; // set by spawner based on screen bounds, may need updating with new assets
     private RectTransform witch;

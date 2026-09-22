@@ -254,7 +254,8 @@ MonoBehaviour:
   mountainPrefab: {fileID: 8495766198286763573, guid: 49c74b90c1ac71b4a9b2d0a4239538ae, type: 3}
   canvasRect: {fileID: 2017265603}
   witch: {fileID: 1506628804}
-  spawnInterval: 5
+  minimumSpawnInterval: 5
+  maximumSpawnInterval: 5
   bottomSpawnY: -250
   topSpawnY: 250
 --- !u!114 &903453231
@@ -417,7 +418,6 @@ GameObject:
   - component: {fileID: 1506628804}
   - component: {fileID: 1506628809}
   - component: {fileID: 1506628808}
-  - component: {fileID: 1506628806}
   - component: {fileID: 1506628805}
   - component: {fileID: 1506628811}
   - component: {fileID: 1506628810}
@@ -467,54 +467,8 @@ MonoBehaviour:
   maxY: 400
   maxTiltAngle: 25
   tiltSpeed: 90
-  hitboxSize: {x: 80, y: 120}
-  hitboxOffset: {x: 0, y: 0}
---- !u!61 &1506628806
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1506628803}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  hitboxSize: {x: 110, y: 200}
+  hitboxOffset: {x: 40, y: 0}
 --- !u!114 &1506628808
 MonoBehaviour:
   m_ObjectHideFlags: 0

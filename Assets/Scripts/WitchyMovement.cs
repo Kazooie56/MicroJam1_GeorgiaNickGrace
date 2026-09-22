@@ -61,9 +61,9 @@ public class WitchyMovement : MonoBehaviour
         currentPosition.y = Mathf.Clamp(currentPosition.y, minY, maxY);             // The Mathf.Clamp prevents it from going out of bounds
         rectTransform.anchoredPosition = currentPosition;
 
-        //// I'm commenting this out but if it's enabled, the witch won't tilt if holding up at the top or down at the bottom.
-        //if (currentPosition.y == minY || currentPosition.y == maxY)
-        //    currentVelocity = 0f;
+        // I'm commenting this out but if it's enabled, the witch won't tilt if holding up at the top or down at the bottom.
+        if (currentPosition.y == minY || currentPosition.y == maxY)
+            currentVelocity = 0f;
 
         // Tilt based on current speed ratio
         float speedRatio = currentVelocity / maxSpeed; // -1 to 1

@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -315236622112933200, guid: 319636212bb5cba4784797ee14a7d4b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 280015751588ec744a52aa6946ad06c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -89,4 +89,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Mountain
   speed: 200
-  witch: {fileID: 0}
+  hitboxSize: {x: 100, y: 580}
+  hitboxOffset: {x: -100, y: 0}
