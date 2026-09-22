@@ -1,30 +1,7 @@
 fileFormatVersion: 2
-<<<<<<< Updated upstream
 guid: 6b3fd3fb1ffcb0d449dc5bf0b212466e
-=======
-<<<<<<< HEAD
-guid: aaa7e05f99ebd42419c479639378b4de
-=======
-guid: 6b3fd3fb1ffcb0d449dc5bf0b212466e
->>>>>>> 1ac15c875bd87ca9adbc951868627494c9c6e930
->>>>>>> Stashed changes
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -3251930934870845745
-    second: Flying_Sprite (1)_0
-  - first:
-      213: -4337309002831803883
-    second: Flying_Sprite (1)_1
-  - first:
-      213: -7325803037495453132
-    second: Flying_Sprite (1)_2
-  - first:
-      213: 8275053538748382746
-    second: Flying_Sprite (1)_3
-  - first:
-      213: -8606876291397695703
-    second: Flying_Sprite (1)_4
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -62,7 +39,7 @@ TextureImporter:
     mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: 1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -86,24 +63,16 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
+  applyGammaDecoding: 1
   swizzle: 50462976
-  cookieLightType: 0
+  cookieLightType: 2
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< Updated upstream
     textureCompression: 0
-=======
-<<<<<<< HEAD
-    textureCompression: 1
-=======
-    textureCompression: 0
->>>>>>> 1ac15c875bd87ca9adbc951868627494c9c6e930
->>>>>>> Stashed changes
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,7 +85,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -131,35 +100,20 @@ TextureImporter:
       name: Flying_Sprite (1)_0
       rect:
         serializedVersion: 2
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
         x: 0
-        y: 342
-        width: 296
-        height: 221
-      alignment: 0
-      pivot: {x: 0, y: 0}
-=======
->>>>>>> Stashed changes
-        x: 1
         y: 343
-        width: 294
-        height: 218
+        width: 295
+        height: 219
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
-=======
->>>>>>> 1ac15c875bd87ca9adbc951868627494c9c6e930
->>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fc65be05b02ded2d0800000000000000
-      internalID: -3251930934870845745
+      spriteID: 4307bade34ef30d459bbb931d2775374
+      internalID: 1618440187
       vertices: []
       indices: 
       edges: []
@@ -168,35 +122,20 @@ TextureImporter:
       name: Flying_Sprite (1)_1
       rect:
         serializedVersion: 2
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-        x: 299
-        y: 342
-        width: 297
-        height: 222
-      alignment: 0
-      pivot: {x: 0, y: 0}
-=======
->>>>>>> Stashed changes
-        x: 301
+        x: 300
         y: 343
-        width: 294
-        height: 219
+        width: 295
+        height: 220
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
-=======
->>>>>>> 1ac15c875bd87ca9adbc951868627494c9c6e930
->>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 51a4b152178cec3c0800000000000000
-      internalID: -4337309002831803883
+      spriteID: 5d2a93919af21514584691ebf49b08f0
+      internalID: 893469366
       vertices: []
       indices: 
       edges: []
@@ -205,35 +144,20 @@ TextureImporter:
       name: Flying_Sprite (1)_2
       rect:
         serializedVersion: 2
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-        x: 599
-        y: 342
-        width: 297
-        height: 222
-      alignment: 0
-      pivot: {x: 0, y: 0}
-=======
->>>>>>> Stashed changes
-        x: 601
+        x: 600
         y: 343
-        width: 294
-        height: 219
+        width: 295
+        height: 220
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
-=======
->>>>>>> 1ac15c875bd87ca9adbc951868627494c9c6e930
->>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 43a1b9f73f4855a90800000000000000
-      internalID: -7325803037495453132
+      spriteID: 8fdbe51c1f3dc3445af38dfbdf8f9320
+      internalID: 1326789709
       vertices: []
       indices: 
       edges: []
@@ -242,35 +166,20 @@ TextureImporter:
       name: Flying_Sprite (1)_3
       rect:
         serializedVersion: 2
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-        x: 1
-        y: 38
-        width: 294
-        height: 246
-      alignment: 0
-      pivot: {x: 0, y: 0}
-=======
->>>>>>> Stashed changes
         x: 2
         y: 39
         width: 292
         height: 244
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
-=======
->>>>>>> 1ac15c875bd87ca9adbc951868627494c9c6e930
->>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a1ebf62b955e6d270800000000000000
-      internalID: 8275053538748382746
+      spriteID: c0749dbdc7ae91a45bc953c75e56f14b
+      internalID: -2042574412
       vertices: []
       indices: 
       edges: []
@@ -279,35 +188,20 @@ TextureImporter:
       name: Flying_Sprite (1)_4
       rect:
         serializedVersion: 2
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-        x: 303
-        y: 38
-        width: 294
-        height: 246
-      alignment: 0
-      pivot: {x: 0, y: 0}
-=======
->>>>>>> Stashed changes
         x: 304
         y: 39
         width: 292
         height: 244
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-<<<<<<< Updated upstream
-=======
->>>>>>> 1ac15c875bd87ca9adbc951868627494c9c6e930
->>>>>>> Stashed changes
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 92742893d9b3e8880800000000000000
-      internalID: -8606876291397695703
+      spriteID: 14ca93024564f264b9937e1fe056a4f4
+      internalID: 613250888
       vertices: []
       indices: 
       edges: []
@@ -316,15 +210,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-<<<<<<< Updated upstream
-    spriteID: 1faba34825c28794eac5aa7bce369ecd
-=======
-<<<<<<< HEAD
-    spriteID: 
-=======
-    spriteID: 1faba34825c28794eac5aa7bce369ecd
->>>>>>> 1ac15c875bd87ca9adbc951868627494c9c6e930
->>>>>>> Stashed changes
+    spriteID: b62a5f546110cb24e8a3df832f3d43ec
     internalID: 0
     vertices: []
     indices: 
@@ -332,25 +218,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-<<<<<<< Updated upstream
       entries:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
-=======
-<<<<<<< HEAD
-      entries: []
-=======
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
->>>>>>> 1ac15c875bd87ca9adbc951868627494c9c6e930
->>>>>>> Stashed changes
     nameFileIdTable:
-      Flying_Sprite (1)_0: -3251930934870845745
-      Flying_Sprite (1)_1: -4337309002831803883
-      Flying_Sprite (1)_2: -7325803037495453132
-      Flying_Sprite (1)_3: 8275053538748382746
-      Flying_Sprite (1)_4: -8606876291397695703
+      Flying_Sprite (1)_0: 1618440187
+      Flying_Sprite (1)_1: 893469366
+      Flying_Sprite (1)_2: 1326789709
+      Flying_Sprite (1)_3: -2042574412
+      Flying_Sprite (1)_4: 613250888
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

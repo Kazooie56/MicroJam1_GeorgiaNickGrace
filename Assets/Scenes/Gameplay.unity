@@ -256,6 +256,7 @@ MonoBehaviour:
   witch: {fileID: 1506628804}
   spawnInterval: 5
   bottomSpawnY: -250
+  topSpawnY: 250
 --- !u!114 &903453231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -420,6 +421,7 @@ GameObject:
   - component: {fileID: 1506628805}
   - component: {fileID: 1506628811}
   - component: {fileID: 1506628810}
+  - component: {fileID: 1506628812}
   m_Layer: 5
   m_Name: Witch
   m_TagString: Untagged
@@ -465,6 +467,8 @@ MonoBehaviour:
   maxY: 400
   maxTiltAngle: 25
   tiltSpeed: 90
+  hitboxSize: {x: 80, y: 120}
+  hitboxOffset: {x: 0, y: 0}
 --- !u!61 &1506628806
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -531,7 +535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3251930934870845745, guid: 6b3fd3fb1ffcb0d449dc5bf0b212466e, type: 3}
+  m_Sprite: {fileID: 1618440187, guid: 6b3fd3fb1ffcb0d449dc5bf0b212466e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5352,6 +5356,28 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!95 &1506628812
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506628803}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22198da3f93cb404e8bf9e75237befb1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &1523147151
 MonoBehaviour:
   m_ObjectHideFlags: 0

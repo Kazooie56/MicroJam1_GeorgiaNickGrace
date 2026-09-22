@@ -13,16 +13,18 @@ public class MountainSpawner : MonoBehaviour
 
     [Header("Spawn Position")]
     public float bottomSpawnY = -250f;
+    public float topSpawnY = 250f;
 
     private float spawnX;
     private float destroyX;
+    private readonly float upsideDownChance = 0.5f;
 
     void Start()
     {
         // Spawn just off the right edge, destroy just off the left edge
         float halfWidth = canvasRect.rect.width / 2f;
         spawnX = halfWidth + 300f;
-        destroyX = -halfWidth - 100f;
+        destroyX = -halfWidth - 300f;
 
         StartCoroutine(SpawnLoop());
     }
@@ -31,7 +33,7 @@ public class MountainSpawner : MonoBehaviour
     {
         while (true)
         {
-            float wait = spawnInterval;
+            float wait = spawnInterval;             // include a math formula that adapts the score later
             yield return new WaitForSeconds(wait);
             SpawnMountain();
         }
@@ -42,7 +44,18 @@ public class MountainSpawner : MonoBehaviour
         GameObject obj = Instantiate(mountainPrefab, canvasRect);
         RectTransform rt = obj.GetComponent<RectTransform>();
 
-        rt.anchoredPosition = new Vector2(spawnX, bottomSpawnY);
+        bool spawnUpsideDown = Random.value < upsideDownChance;
+
+        if (spawnUpsideDown)
+        {
+            rt.anchoredPosition = new Vector2(spawnX, topSpawnY);
+            rt.localRotation = Quaternion.Euler(0f, 0f, 180f);
+        }
+        else
+        {
+            rt.anchoredPosition = new Vector2(spawnX, bottomSpawnY);
+            rt.localRotation = Quaternion.identity; // make sure it resets if the prefab isn't already upright
+        }
 
         Mountain mountain = obj.GetComponent<Mountain>();
         mountain.Init(witch, destroyX);

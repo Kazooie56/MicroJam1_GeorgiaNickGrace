@@ -4,8 +4,8 @@ using UnityEngine.InputSystem;
 public class WitchyMovement : MonoBehaviour
 {
     [Header("Movement")]
-    public float maxSpeed = 1000f;       
-    public float acceleration = 5000f;   
+    public float maxSpeed = 1000f;
+    public float acceleration = 5000f;
     public float deceleration = 2000f;   // how fast it comes to a stop when no movement is done.
 
     [Header("Bounds")]
@@ -17,12 +17,15 @@ public class WitchyMovement : MonoBehaviour
     public float maxTiltAngle = 20f;    // this is in degrees
     public float tiltSpeed = 90f;
 
-    private RectTransform rectTransform;
+    [Header("Hitbox (manual adjustment)")]
+    public Vector2 hitboxSize = new Vector2(80f, 120f);
+    public Vector2 hitboxOffset = Vector2.zero;
+
+    private RectTransform rectTransform; // Mountain's Rect Transform
     private float currentVelocity = 0f;
 
     void Start()
     {
-        // We need this to have something to move
         rectTransform = GetComponent<RectTransform>();
     }
 
@@ -53,12 +56,9 @@ public class WitchyMovement : MonoBehaviour
             currentVelocity = Mathf.MoveTowards(currentVelocity, 0f, deceleration * Time.deltaTime);
         }
 
-        // rectTransform is needed for objects with Rect Transform like my placeholder Witch.
-        // anchoredPosition is the literal anchored position the object has.
-        // The Mathf.Clamp prevents it from going out of bounds
-        Vector2 currentPosition = rectTransform.anchoredPosition;   
-        currentPosition.y += currentVelocity * Time.deltaTime;      
-        currentPosition.y = Mathf.Clamp(currentPosition.y, minY, maxY);
+        Vector2 currentPosition = rectTransform.anchoredPosition;
+        currentPosition.y += currentVelocity * Time.deltaTime;
+        currentPosition.y = Mathf.Clamp(currentPosition.y, minY, maxY);             // The Mathf.Clamp prevents it from going out of bounds
         rectTransform.anchoredPosition = currentPosition;
 
         //// I'm commenting this out but if it's enabled, the witch won't tilt if holding up at the top or down at the bottom.
@@ -75,5 +75,24 @@ public class WitchyMovement : MonoBehaviour
 
         float newAngle = Mathf.MoveTowards(currentAngle, targetTiltAngle, tiltSpeed * Time.deltaTime);
         rectTransform.eulerAngles = new Vector3(0f, 0f, newAngle);
+    }
+
+    public Rect GetHitboxRect()
+    {
+        Vector2 center = rectTransform.anchoredPosition + hitboxOffset;
+        // x and y start from the bottom left corner
+        // hitboxSize is a 2d Vector using updated hitboxes because box colliders are a pain for UI images.
+        // since center.x and center.y start from the middle, subtracting the hitbox size divided by 2 gives you the left edge
+        // same for y, then width and height are the hitbox size x and y
+        return new Rect(center.x - hitboxSize.x / 2f, center.y - hitboxSize.y / 2f, hitboxSize.x, hitboxSize.y);
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
+        Gizmos.color = Color.green;
+        Vector3 worldCenter = rectTransform.TransformPoint(hitboxOffset);
+        Vector2 worldSize = Vector2.Scale(hitboxSize, rectTransform.lossyScale);
+        Gizmos.DrawWireCube(worldCenter, new Vector3(worldSize.x, worldSize.y, 0.1f));
     }
 }
