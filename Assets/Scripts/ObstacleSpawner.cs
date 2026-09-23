@@ -50,12 +50,12 @@ public class MountainSpawner : MonoBehaviour
         if (spawnUpsideDown)
         {
             rt.anchoredPosition = new Vector2(spawnX, topSpawnY);
-            rt.localRotation = Quaternion.Euler(0f, 0f, 180f);
+            rt.localScale = new Vector3(1f, -1f, 1f);
         }
         else
         {
             rt.anchoredPosition = new Vector2(spawnX, bottomSpawnY);
-            rt.localRotation = Quaternion.identity; // make sure it resets if the prefab isn't already upright
+            rt.localScale = new Vector3(1f, 1f, 1f);
         }
 
         Mountain mountain = obj.GetComponent<Mountain>();
