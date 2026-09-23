@@ -71,6 +71,7 @@ public class UIManager : MonoBehaviour
     {
         HideAllUI();
         gamePlayUI.SetActive(true);
+        gameplayScreen.SetActive(true);
 
         Time.timeScale = 1f;
     }
