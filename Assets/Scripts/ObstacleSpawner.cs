@@ -9,8 +9,8 @@ public class MountainSpawner : MonoBehaviour
     public RectTransform witch;        // drag the witch's RectTransform here
 
     [Header("Spawn Timing")]
-    public float minimumSpawnInterval = 5f;
-    public float maximumSpawnInterval = 5f;
+    public float minimumSpawnInterval = 4f;
+    public float maximumSpawnInterval = 6f; // maybe make the difference smaller like pokemon damage variance.
 
     [Header("Spawn Position")]
     public float bottomSpawnY = -250f;
@@ -34,7 +34,7 @@ public class MountainSpawner : MonoBehaviour
     {
         while (true)
         {
-            float wait = minimumSpawnInterval;             // include a math formula that adapts the score later
+            float wait = Random.Range(minimumSpawnInterval, maximumSpawnInterval);             // include a math formula that adapts the score later
             yield return new WaitForSeconds(wait);
             SpawnMountain();
         }
