@@ -9,8 +9,6 @@ public class UIManager : MonoBehaviour
     public GameObject pauseScreenUI;
     public GameObject gameOverScreenUI;
     public GameObject gameplayScreen;
-
-
    
     //// I'm toggling this off for testing, should be fine to keep off if we remember to uncomment this method after testing or the game begins on the MainMenu
     //void Start()
@@ -32,6 +30,7 @@ public class UIManager : MonoBehaviour
     {
         HideAllUI();
         mainMenuUI.SetActive(true);
+        GameManager.Instance.ResetGame();
 
         Time.timeScale = 0f;
     }
@@ -42,14 +41,6 @@ public class UIManager : MonoBehaviour
         instructionsScreenUI.SetActive(true);
 
         Time.timeScale = 0f;
-    }
-
-    public void ShowGamePlayUI()
-    {
-        HideAllUI();
-        gamePlayUI.SetActive(true);
-
-        Time.timeScale = 1f;
     }
 
     public void ShowPauseScreenUI()

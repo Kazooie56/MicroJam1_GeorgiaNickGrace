@@ -8,6 +8,7 @@ public class WitchyMovement : MonoBehaviour
     public float acceleration = 5000f;
     public float deceleration = 2000f;   // how fast it comes to a stop when no movement is done.
 
+
     [Header("Bounds")]
     // incase we need to adjust if we change the screen size.
     public float minY = -250f;
@@ -61,7 +62,6 @@ public class WitchyMovement : MonoBehaviour
         currentPosition.y = Mathf.Clamp(currentPosition.y, minY, maxY);             // The Mathf.Clamp prevents it from going out of bounds
         rectTransform.anchoredPosition = currentPosition;
 
-        // I'm commenting this out but if it's enabled, the witch won't tilt if holding up at the top or down at the bottom.
         if (currentPosition.y == minY || currentPosition.y == maxY)
             currentVelocity = 0f;
 
@@ -85,6 +85,14 @@ public class WitchyMovement : MonoBehaviour
         // since center.x and center.y start from the middle, subtracting the hitbox size divided by 2 gives you the left edge
         // same for y, then width and height are the hitbox size x and y
         return new Rect(center.x - hitboxSize.x / 2f, center.y - hitboxSize.y / 2f, hitboxSize.x, hitboxSize.y);
+    }
+
+    public void ResetPosition()
+    {
+        RectTransform rt = GetComponent<RectTransform>();
+        Vector2 position = rt.anchoredPosition;
+        position.y = 0f;
+        rt.anchoredPosition = position;
     }
 
     void OnDrawGizmosSelected()

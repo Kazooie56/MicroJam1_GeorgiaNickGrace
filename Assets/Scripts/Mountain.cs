@@ -68,28 +68,28 @@ public class Mountain : MonoBehaviour
         return mountainRect.Overlaps(witchRect);
     }
 
-    // Turns a position + size + offset into a Rect centered on that position.
-    // This works directly in anchoredPosition space - no world-space conversion needed,
-    // since both the mountain and witch live under the same canvas.
     private Rect GetHitboxRect(Vector2 position, Vector2 size, Vector2 offset)
     {
-        Vector2 center = position + offset;
-        return new Rect(center.x - size.x / 2f, center.y - size.y / 2f, size.x, size.y);
+        // because we have random mountain size now, these STUPID MOUNTAINS NEED THEIR SIZE INVOLVED IN THE CALCULATIONS
+        // I HAVE TO USE ABSOLUTE BECAUSE THIS IS ABSOLUTELY STUPID (and we're multiplying it by negatives for upside down mountains)
+        // also making rects with negatives doesn't work right
+
+        Vector2 scale = rectTransform.localScale;
+        Vector2 scaledSize = new Vector2(size.x * Mathf.Abs(scale.x), size.y * Mathf.Abs(scale.y));
+        Vector2 scaledOffset = new Vector2(offset.x * scale.x, offset.y * scale.y);
+        Vector2 center = position + scaledOffset;
+        return new Rect(center.x - scaledSize.x / 2f, center.y - scaledSize.y / 2f, scaledSize.x, scaledSize.y);
     }
 
-    // Draws the hitbox as a red box in the Scene view whenever this object is selected.
-    // NOTE: this uses real world-space coordinates (TransformPoint/lossyScale), NOT
-    // anchoredPosition. Gizmos.DrawWireCube always draws in world space, so plugging in
-    // raw anchoredPosition numbers only lines up if the Canvas sits at world origin with
-    // scale 1 - otherwise the box ends up offset and the wrong size. The actual collision
-    // check above (GetHitboxRect/HitboxesOverlap) is unaffected - it still uses the simple
-    // anchoredPosition math, which is correct since both objects share the same Canvas.
+
+    // We don't need this below method, the hitboxes are fine and we are done changing it.
+
     void OnDrawGizmosSelected()
     {
         if (rectTransform == null) rectTransform = GetComponent<RectTransform>();
         Gizmos.color = Color.red;
         Vector3 worldCenter = rectTransform.TransformPoint(hitboxOffset);
-        Vector2 worldSize = Vector2.Scale(hitboxSize, rectTransform.lossyScale);
+        Vector2 worldSize = Vector2.Scale(hitboxSize, rectTransform.lossyScale); // lossyScale gives you the most accurate space, it checks out the parent object's scales too.
         Gizmos.DrawWireCube(worldCenter, new Vector3(worldSize.x, worldSize.y, 0.1f));
     }
 }
