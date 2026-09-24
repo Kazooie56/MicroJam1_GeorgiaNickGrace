@@ -3,13 +3,20 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    public static UIManager Instance;
+
     public GameObject mainMenuUI;
     public GameObject instructionsScreenUI;
     public GameObject gamePlayUI;
     public GameObject pauseScreenUI;
     public GameObject gameOverScreenUI;
     public GameObject gameplayScreen;
-   
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
     //// I'm toggling this off for testing, should be fine to keep off if we remember to uncomment this method after testing or the game begins on the MainMenu
     //void Start()
     //{
@@ -55,6 +62,7 @@ public class UIManager : MonoBehaviour
     {
         HideAllUI();
         gameOverScreenUI.SetActive(true);
+        GameManager.Instance.ResetGame();
 
         Time.timeScale = 0f;
     }

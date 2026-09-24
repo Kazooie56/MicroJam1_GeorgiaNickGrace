@@ -11,8 +11,6 @@ public class Mountain : MonoBehaviour
     public Vector2 hitboxSize = new Vector2(150f, 150f);
     public Vector2 hitboxOffset = Vector2.zero;
 
-    // 
-
     private RectTransform rectTransform;
     private float offscreenDeletion = -1500f; // set by spawner based on screen bounds, may need updating with new assets
     private RectTransform witch;
@@ -52,9 +50,14 @@ public class Mountain : MonoBehaviour
 
     void OnHitWitch()
     {
-        Destroy(witch.gameObject);
-        Destroy(gameObject);
-        // TODO: incorporate menu logic eventually
+        //if (GameManager.Instance.IsGameOver)
+        //{
+        //  return;
+        //}
+
+        // we need to set it to false because if we destroy it and retry, the game crashes
+        witch.gameObject.SetActive(false);
+        GameManager.Instance.OnWitchDied();
     }
 
     // Compares this mountain's hitbox against the witch's hitbox.

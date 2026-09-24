@@ -291,6 +291,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 761130803}
     - target: {fileID: 7075669294041575576, guid: 9292e7379c3ab0541a4734003513cd28, type: 3}
+      propertyPath: maxSize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075669294041575576, guid: 9292e7379c3ab0541a4734003513cd28, type: 3}
+      propertyPath: minSize
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7075669294041575576, guid: 9292e7379c3ab0541a4734003513cd28, type: 3}
       propertyPath: topSpawnY
       value: 750
       objectReference: {fileID: 0}
@@ -303,8 +311,12 @@ PrefabInstance:
       value: -750
       objectReference: {fileID: 0}
     - target: {fileID: 7075669294041575576, guid: 9292e7379c3ab0541a4734003513cd28, type: 3}
+      propertyPath: gameplayScreen
+      value: 
+      objectReference: {fileID: 162808935}
+    - target: {fileID: 7075669294041575576, guid: 9292e7379c3ab0541a4734003513cd28, type: 3}
       propertyPath: minimumSpawnInterval
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8343070138363734662, guid: 9292e7379c3ab0541a4734003513cd28, type: 3}
       propertyPath: m_Name
@@ -1726,6 +1738,17 @@ CapsuleCollider2D:
   m_Offset: {x: 42.265827, y: -2.3638706}
   m_Size: {x: 109.082634, y: 209.8591}
   m_Direction: 0
+--- !u!114 &761130814 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4616041236474573821, guid: 3f9ca62d04eecdc4a904d57b19893f43, type: 3}
+  m_PrefabInstance: {fileID: 599019593}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 761130802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd591ff46c40624c9e726243dbe07ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WitchyMovement
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,6 +1935,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 860207648}
   m_CullTransparentMesh: 1
+--- !u!1 &899988942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 899988944}
+  - component: {fileID: 899988943}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &899988943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899988942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 672d3a25d916b9d418cf4762dc563f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  mountainSpawner: {fileID: 1536986954}
+  witch: {fileID: 761130814}
+--- !u!4 &899988944
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 899988942}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &975153704 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5152267731549435684, guid: 9292e7379c3ab0541a4734003513cd28, type: 3}
@@ -3024,7 +3093,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1426487493
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3309,6 +3378,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482454391}
   m_CullTransparentMesh: 1
+--- !u!114 &1536986954 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7075669294041575576, guid: 9292e7379c3ab0541a4734003513cd28, type: 3}
+  m_PrefabInstance: {fileID: 24315350}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffd0c8efef047b34798048c74b45883c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MountainSpawner
 --- !u!1 &1644478600
 GameObject:
   m_ObjectHideFlags: 0
@@ -4506,7 +4586,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Score:'
+  m_text: 'Score: ?'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4830,6 +4910,7 @@ CanvasRenderer:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 899988944}
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}

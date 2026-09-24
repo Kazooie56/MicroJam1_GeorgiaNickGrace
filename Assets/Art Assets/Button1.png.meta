@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 46059a1757d9a2e4a803f03044afa937
+guid: d8a3fa43ad8108d4b8797f972ce78fac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3160170664462721955
-    second: Game over _0
+      213: 3502715887467967171
+    second: Button1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,10 +72,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game over _0
+      name: Button1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2732
-        height: 2048
+        x: 51
+        y: 30
+        width: 1043
+        height: 440
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a329ecd97e2bdb20800000000000000
-      internalID: 3160170664462721955
+      spriteID: 3c235ad9a852c9030800000000000000
+      internalID: 3502715887467967171
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Game over _0: 3160170664462721955
+      Button1_0: 3502715887467967171
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

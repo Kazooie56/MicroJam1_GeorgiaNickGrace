@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 46059a1757d9a2e4a803f03044afa937
+guid: 2523de6d6edfd9b4c9be8f8816e81995
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3160170664462721955
-    second: Game over _0
+      213: -5030339213741677122
+    second: ControlsGraphic_0
+  - first:
+      213: 5953892620992034542
+    second: ControlsGraphic_1
+  - first:
+      213: -5922458304632878066
+    second: ControlsGraphic_2
+  - first:
+      213: -1704525754738254790
+    second: ControlsGraphic_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,10 +81,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 4096
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game over _0
+      name: ControlsGraphic_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2732
-        height: 2048
+        x: 255
+        y: 1616
+        width: 808
+        height: 788
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a329ecd97e2bdb20800000000000000
-      internalID: 3160170664462721955
+      spriteID: eb5a5311325a03ab0800000000000000
+      internalID: -5030339213741677122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlsGraphic_1
+      rect:
+        serializedVersion: 2
+        x: 1133
+        y: 1635
+        width: 464
+        height: 809
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6bc013bc970a250800000000000000
+      internalID: 5953892620992034542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlsGraphic_2
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 391
+        width: 808
+        height: 788
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0c8b4bec833fcda0800000000000000
+      internalID: -5922458304632878066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ControlsGraphic_3
+      rect:
+        serializedVersion: 2
+        x: 1130
+        y: 351
+        width: 463
+        height: 804
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3c52566bde4858e0800000000000000
+      internalID: -1704525754738254790
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Game over _0: 3160170664462721955
+      ControlsGraphic_0: -5030339213741677122
+      ControlsGraphic_1: 5953892620992034542
+      ControlsGraphic_2: -5922458304632878066
+      ControlsGraphic_3: -1704525754738254790
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

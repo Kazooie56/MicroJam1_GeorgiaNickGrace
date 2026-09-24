@@ -6,13 +6,13 @@ public class MountainSpawner : MonoBehaviour
 {
     [Header("References")]
     public GameObject mountainPrefab;
-    public RectTransform canvasRect;   // drag your Canvas's RectTransform here
+    public RectTransform canvasRect;   // drag the Canvas's RectTransform here
     public RectTransform gameplayScreen; // drag gameplay here so the mountains are children here.
     public RectTransform witch;        // drag the witch's RectTransform here
 
     [Header("Randomness")]
-    public float minimumSpawnInterval = 4f;
-    public float maximumSpawnInterval = 6f; // maybe make the difference smaller like pokemon damage variance.
+    public float minimumSpawnInterval = 3f;
+    public float maximumSpawnInterval = 5f; // maybe make the difference smaller like pokemon damage variance.
     public float minSize = 0.8f;
     public float maxSize = 1.2f;
     private readonly float upsideDownChance = 0.5f;
@@ -41,8 +41,8 @@ public class MountainSpawner : MonoBehaviour
     {
         // Spawn just off the right edge, destroy just off the left edge
         float halfWidth = canvasRect.rect.width / 2f;
-        spawnX = halfWidth + 300f;
-        destroyX = -halfWidth - 300f;
+        spawnX = halfWidth + 800f;
+        destroyX = -halfWidth - 800f;
     }
 
     IEnumerator SpawnLoop()
@@ -62,9 +62,11 @@ public class MountainSpawner : MonoBehaviour
 
         RectTransform rt = obj.GetComponent<RectTransform>();
 
+        // upside down and random size adjustments
         bool spawnUpsideDown = Random.value < upsideDownChance;
         float randomSize = Random.Range(minSize, maxSize);
 
+        // uses the new random size and scales the y of the mountain by negative to flip it,
         if (spawnUpsideDown)
         {
             rt.anchoredPosition = new Vector2(spawnX, topSpawnY);

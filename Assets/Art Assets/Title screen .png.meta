@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 46059a1757d9a2e4a803f03044afa937
+guid: f9312722148c224468b6351a96637127
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3160170664462721955
-    second: Game over _0
+      213: -8096601464872729749
+    second: Title screen _0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Game over _0
+      name: Title screen _0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3a329ecd97e2bdb20800000000000000
-      internalID: 3160170664462721955
+      spriteID: b638a568dd713af80800000000000000
+      internalID: -8096601464872729749
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Game over _0: 3160170664462721955
+      Title screen _0: -8096601464872729749
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
