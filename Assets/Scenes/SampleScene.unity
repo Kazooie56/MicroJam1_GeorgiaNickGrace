@@ -1964,8 +1964,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 672d3a25d916b9d418cf4762dc563f92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  IsGameOver: 0
   mountainSpawner: {fileID: 1536986954}
   witch: {fileID: 761130814}
+  UIManager: {fileID: 0}
 --- !u!4 &899988944
 Transform:
   m_ObjectHideFlags: 0
@@ -2858,6 +2860,7 @@ MonoBehaviour:
   pauseScreenUI: {fileID: 650527716}
   gameOverScreenUI: {fileID: 633584500}
   gameplayScreen: {fileID: 162808934}
+  scoreText: {fileID: 2106748972}
 --- !u!114 &1222958454
 MonoBehaviour:
   m_ObjectHideFlags: 0

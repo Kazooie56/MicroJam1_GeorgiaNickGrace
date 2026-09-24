@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,16 +13,21 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverScreenUI;
     public GameObject gameplayScreen;
 
+    private int score;
+    public TextMeshProUGUI scoreText;
+
     void Awake()
     {
         Instance = this;
     }
 
     //// I'm toggling this off for testing, should be fine to keep off if we remember to uncomment this method after testing or the game begins on the MainMenu
-    //void Start()
-    //{
-    //    ShowMainMenu();
-    //}
+    void Start()
+    {
+        ShowMainMenu();
+        score = 0;
+        scoreText.text = "Score: " + score;
+    }
 
     public void HideAllUI()
     {
@@ -73,5 +79,18 @@ public class UIManager : MonoBehaviour
         gameplayScreen.SetActive(true);
 
         Time.timeScale = 1f;
+
+
+        StartCoroutine(updateScore());
+    }
+
+    private IEnumerator updateScore()
+    {
+        yield return new WaitForSeconds(1);
+
+        score += 100;
+        scoreText.text = "Score: " + score;
+        StartCoroutine(updateScore());
+        
     }
 }
