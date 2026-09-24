@@ -21,8 +21,23 @@ public class GameManager : MonoBehaviour
         if (IsGameOver) return;
         IsGameOver = true;
 
-        mountainSpawner.enabled = false; // stop spawning immediately
+        mountainSpawner.enabled = false;
+        AudioManager.Instance.PlayThud();
+        AudioManager.Instance.StopMusic();
         UIManager.Instance.ShowGameOverScreenUI();
+    }
+
+    public void OnRetryPressed()
+    {
+        AudioManager.Instance.RestartMusic();
+        GameManager.Instance.ResetGame();
+        UIManager.Instance.ShowGameplay();
+    }
+
+    public void OnGameOverMainMenuPressed()
+    {
+        AudioManager.Instance.RestartMusic();
+        UIManager.Instance.ShowMainMenu(); // already calls GameManager.Instance.ResetGame() internally
     }
 
     public void ResetGame()
