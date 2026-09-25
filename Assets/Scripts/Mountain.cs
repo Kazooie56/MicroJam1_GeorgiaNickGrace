@@ -3,9 +3,8 @@ using UnityEngine;
 public class Mountain : MonoBehaviour
 {
     [Header("Movement")]
-    public float speed = 250f; // Eventually sync up with score at a later point, for now, public float
-    private float score = 1f; // placeholder
-    private float scorescaling = 1f; //placeholder
+    public float speed = 250f;
+    private float scorescaling = 0.001f; 
 
     [Header("Hitbox (manual adjustment)")]
     public Vector2 hitboxSize = new Vector2(150f, 150f);
@@ -20,7 +19,7 @@ public class Mountain : MonoBehaviour
         rectTransform = GetComponent<RectTransform>();
     }
 
-    // Prefab can't know about the witch
+    // can't assign references to prefabs
     public void Init(RectTransform witchTarget, float offscreenX)
     {
         witch = witchTarget;
@@ -31,7 +30,7 @@ public class Mountain : MonoBehaviour
     {
         // Move left
         Vector2 position = rectTransform.anchoredPosition;
-        position.x -= speed * (score / scorescaling) * Time.deltaTime;
+        position.x -= speed * (ScoreManager.Instance.score * scorescaling) * Time.deltaTime;
         rectTransform.anchoredPosition = position;
 
         // Clean up once off-screen
@@ -50,11 +49,6 @@ public class Mountain : MonoBehaviour
 
     void OnHitWitch()
     {
-        //if (GameManager.Instance.IsGameOver)
-        //{
-        //  return;
-        //}
-
         // we need to set it to false because if we destroy it and retry, the game crashes
         witch.gameObject.SetActive(false);
         GameManager.Instance.OnWitchDied();
@@ -73,8 +67,8 @@ public class Mountain : MonoBehaviour
 
     private Rect GetHitboxRect(Vector2 position, Vector2 size, Vector2 offset)
     {
-        // because we have random mountain size now, these STUPID MOUNTAINS NEED THEIR SIZE INVOLVED IN THE CALCULATIONS
-        // I HAVE TO USE ABSOLUTE BECAUSE THIS IS ABSOLUTELY STUPID (and we're multiplying it by negatives for upside down mountains)
+        // because we have random mountain size now, these mountains need their size involved in the calculations
+        // we have to use absolutes (Abs) because we're multiplying it by negatives for upside down mountains)
         // also making rects with negatives doesn't work right
 
         Vector2 scale = rectTransform.localScale;

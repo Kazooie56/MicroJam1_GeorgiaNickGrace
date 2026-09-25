@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System.Collections;
 
 public class UIManager : MonoBehaviour
 {
@@ -12,16 +13,51 @@ public class UIManager : MonoBehaviour
     public GameObject gameOverScreenUI;
     public GameObject gameplayScreen;
 
+    public int score;
+    public TextMeshProUGUI scoreText;
+    private Coroutine scoreRoutine;
+
     void Awake()
     {
         Instance = this;
     }
 
-    //// I'm toggling this off for testing, should be fine to keep off if we remember to uncomment this method after testing or the game begins on the MainMenu
-    //void Start()
-    //{
-    //    ShowMainMenu();
-    //}
+    void Start()
+    {
+        ShowMainMenu();
+        ResetScore();
+    }
+
+    public void StopScoring()
+    {
+        if (scoreRoutine != null)
+        {
+            StopCoroutine(scoreRoutine);
+            scoreRoutine = null;
+        }
+    }
+
+    private IEnumerator UpdateScoreLoop()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+            score += 100;
+            scoreText.text = "Score: " + score;
+        }
+    }
+
+    public void StartScoring()
+    {
+        StopScoring();
+        scoreRoutine = StartCoroutine(UpdateScoreLoop());
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+        scoreText.text = "Score: " + score;
+    }
 
     public void HideAllUI()
     {
@@ -62,8 +98,10 @@ public class UIManager : MonoBehaviour
     {
         HideAllUI();
         gameOverScreenUI.SetActive(true);
-        GameManager.Instance.ResetGame();
 
+        ScoreManager.Instance.StopScoring();
+        ScoreManager.Instance.UpdateFinalScoreText();
+        ScoreManager.Instance.UpdateHighScore();
         Time.timeScale = 0f;
     }
     public void ShowGameplay()
@@ -73,5 +111,6 @@ public class UIManager : MonoBehaviour
         gameplayScreen.SetActive(true);
 
         Time.timeScale = 1f;
+        ScoreManager.Instance.StartScoring();
     }
 }
