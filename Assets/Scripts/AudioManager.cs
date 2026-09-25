@@ -6,7 +6,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Audio Sources")]
     public AudioSource music;
-    public AudioSource sfx;
+    public AudioSource sfx;  
 
     [Header("Clips")]
     public AudioClip backgroundMusic;

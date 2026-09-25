@@ -87,7 +87,7 @@ public class MountainSpawner : MonoBehaviour
         activeMountains.Remove(mountain);
     }
 
-    public void ClearMountainList()
+    public void ResetSpawner()
     {
         foreach (GameObject mountain in activeMountains)
         {
