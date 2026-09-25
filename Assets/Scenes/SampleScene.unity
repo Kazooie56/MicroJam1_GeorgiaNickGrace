@@ -2349,6 +2349,7 @@ MonoBehaviour:
   IsGameOver: 0
   mountainSpawner: {fileID: 1536986954}
   witch: {fileID: 761130814}
+  UIManager: {fileID: 0}
 --- !u!4 &899988944
 Transform:
   m_ObjectHideFlags: 0
