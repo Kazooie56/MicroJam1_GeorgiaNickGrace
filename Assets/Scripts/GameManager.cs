@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
 
     public MountainSpawner mountainSpawner;
     public WitchyMovement witch;
-    public UIManager UIManager;
-    //public ScoreManager scoreManager;   // pray
 
     void Awake()
     {
@@ -18,7 +16,11 @@ public class GameManager : MonoBehaviour
 
     public void OnWitchDied()
     {
-        if (IsGameOver) return;
+        if (IsGameOver)
+        {
+            return;
+        }
+
         IsGameOver = true;
 
         mountainSpawner.enabled = false;
@@ -30,24 +32,23 @@ public class GameManager : MonoBehaviour
     public void OnRetryPressed()
     {
         AudioManager.Instance.RestartMusic();
-        GameManager.Instance.ResetGame();
+        ResetGame();
         UIManager.Instance.ShowGameplay();
     }
 
     public void OnGameOverMainMenuPressed()
     {
         AudioManager.Instance.RestartMusic();
-        UIManager.Instance.ShowMainMenu(); // already calls GameManager.Instance.ResetGame() internally
+        UIManager.Instance.ShowMainMenu();
     }
 
     public void ResetGame()
     {
         IsGameOver = false;
-        mountainSpawner.ResetSpawner();
+        mountainSpawner.ClearMountainList();
         witch.ResetPosition();
-        witch.gameObject.SetActive(true); // re-enable after death
+        witch.gameObject.SetActive(true);
         mountainSpawner.enabled = true;
-
-        // scoreManager.ResetScore();
+        ScoreManager.Instance.ResetScore();
     }
 }
