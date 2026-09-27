@@ -63,6 +63,9 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreText();
     }
 
+    // Updates high score
+    // makes the NEW RECORD text appear and disappear at the end
+    // also makes High Score appear in game when a high score is made.
     public void UpdateHighScore()
     {
         // checks if we have a highscore
@@ -78,7 +81,7 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.Save();
             hasHighScore = true;
 
-            // shows the new record text?
+            // shows the new record! text that appears on the game over screen
             if (newRecordText != null)
             {
                 newRecordText.SetActive(true);
@@ -86,12 +89,20 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
+            // makes it invisible
             if (newRecordText != null)
             {
                 newRecordText.SetActive(false);
             }
         }
 
-        highScoreText.text = hasHighScore ? "High Score: " + highScore : "";
+        if (hasHighScore)
+        {
+            highScoreText.text = "High Score: " + highScore;
+        }
+        else
+        {
+            highScoreText.text = "";
+        }
     }
 }

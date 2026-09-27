@@ -11,8 +11,8 @@ public class MountainSpawner : MonoBehaviour
     public RectTransform witch;        // drag the witch's RectTransform here
 
     [Header("Randomness")]
-    public float minimumSpawnInterval = 3f;
-    public float maximumSpawnInterval = 5f; // maybe make the difference smaller like pokemon damage variance.
+    public float minimumSpawnInterval = 3f;     // Could be better
+    public float maximumSpawnInterval = 5f; 
     public float minSize = 0.8f;
     public float maxSize = 1.2f;
     private readonly float upsideDownChance = 0.5f;
@@ -30,11 +30,6 @@ public class MountainSpawner : MonoBehaviour
     {
         // need to do this otherwise it's broken on Start after swtiching screens
         StartCoroutine(SpawnLoop());
-    }
-
-    void OnDisable()
-    {
-        StopAllCoroutines();
     }
 
     void Start()

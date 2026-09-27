@@ -112,5 +112,7 @@ public class UIManager : MonoBehaviour
 
         Time.timeScale = 1f;
         ScoreManager.Instance.StartScoring();
+
+        ScoreManager.Instance.UpdateHighScore();
     }
 }

@@ -28,6 +28,7 @@ public class WitchyMovement : MonoBehaviour
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        rectTransform.SetAsLastSibling();
     }
 
     void Update()
@@ -75,6 +76,8 @@ public class WitchyMovement : MonoBehaviour
 
         float newAngle = Mathf.MoveTowards(currentAngle, targetTiltAngle, tiltSpeed * Time.deltaTime);
         rectTransform.eulerAngles = new Vector3(0f, 0f, newAngle);
+
+        transform.SetAsLastSibling(); // This just puts her on top of the Mountain Sprites
     }
 
     public Rect GetHitboxRect()
