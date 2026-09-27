@@ -5,13 +5,15 @@ public class AudioManager : MonoBehaviour
     public static AudioManager Instance;
 
     [Header("Audio Sources")]
-    public AudioSource music;
-    public AudioSource sfx;
+    public AudioSource musicSource;
+    public AudioSource sfxSource;
 
     [Header("Clips")]
     public AudioClip backgroundMusic;
+    public AudioClip gameOverMusic;
     public AudioClip witchLaughSound;
-    public AudioClip thudSound;
+    public AudioClip dieSound;             // thud
+    public AudioClip dieSound2;            // splat
 
     void Awake()
     {
@@ -20,36 +22,59 @@ public class AudioManager : MonoBehaviour
 
     void Start()
     {
-        PlayMusic();
+        PlayBackgroundMusic();
         PlaySFX(witchLaughSound);
     }
 
-    public void PlayMusic()
+    public void PlayBackgroundMusic()
     {
-        music.clip = backgroundMusic;
-        music.loop = true;
-        music.Play();
+        musicSource.clip = backgroundMusic;
+        musicSource.loop = true;
+        musicSource.Play();
+    }
+
+    public void PlayGameOverMusic()
+    {
+        musicSource.clip = gameOverMusic;
+        musicSource.loop = false; // false means it plays once
+        musicSource.Play();
     }
 
     public void StopMusic()
     {
-        music.Stop();
+        musicSource.Stop();
     }
 
     public void RestartMusic()
     {
-        music.Stop();
-        music.Play();
+        musicSource.Stop();
+        musicSource.Play();
     }
 
-    public void PlayThud()
+    public void PlayDieSound()
     {
-        PlaySFX(thudSound);
+        float RandomGeneratedNumber = Random.Range(0, 100);
+
+        AudioClip chosenDeathSound;
+
+        // 50/50 chance of thud or splat
+        if (RandomGeneratedNumber < 50)
+        {
+            chosenDeathSound = dieSound;
+        }
+        else
+        {
+            chosenDeathSound = dieSound2;
+        }
+
+        PlaySFX(chosenDeathSound);
     }
 
     void PlaySFX(AudioClip clip)
     {
         if (clip != null)
-            sfx.PlayOneShot(clip);
+        {
+            sfxSource.PlayOneShot(clip);
+        }
     }
 }

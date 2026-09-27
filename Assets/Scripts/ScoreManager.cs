@@ -78,7 +78,7 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.Save();
             hasHighScore = true;
 
-            // shows the new record text?
+            // shows the new record! text that appears on the game over screen
             if (newRecordText != null)
             {
                 newRecordText.SetActive(true);
@@ -86,12 +86,20 @@ public class ScoreManager : MonoBehaviour
         }
         else
         {
+            // makes it invisible
             if (newRecordText != null)
             {
                 newRecordText.SetActive(false);
             }
         }
 
-        highScoreText.text = hasHighScore ? "High Score: " + highScore : "";
+        if (hasHighScore)
+        {
+            highScoreText.text = "High Score: " + highScore;
+        }
+        else
+        {
+            highScoreText.text = "";
+        }
     }
 }

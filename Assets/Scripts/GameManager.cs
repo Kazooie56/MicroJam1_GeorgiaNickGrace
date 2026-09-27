@@ -24,14 +24,16 @@ public class GameManager : MonoBehaviour
         IsGameOver = true;
 
         mountainSpawner.enabled = false;
-        AudioManager.Instance.PlayThud();
+        AudioManager.Instance.PlayDieSound();
         AudioManager.Instance.StopMusic();
+        AudioManager.Instance.PlayGameOverMusic();
         UIManager.Instance.ShowGameOverScreenUI();
     }
 
     public void OnRetryPressed()
     {
         AudioManager.Instance.RestartMusic();
+        AudioManager.Instance.PlayBackgroundMusic();
         ResetGame();
         UIManager.Instance.ShowGameplay();
     }

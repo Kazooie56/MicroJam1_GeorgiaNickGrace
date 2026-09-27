@@ -12,7 +12,8 @@ public class LoopingEffect : MonoBehaviour
     public float imageWidth = 2732.446f; // specific size of the canvas
 
     // This is how far to the left the object is. 
-    // even though left would make it negative, we 
+    // even though left would make it negative in unity, we increase it for our calculations but
+    // it ends up equalling the same, just in the positives instead of negatives
     private float offset;
 
     void Update()

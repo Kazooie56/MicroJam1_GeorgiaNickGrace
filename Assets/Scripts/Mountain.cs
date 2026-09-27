@@ -79,7 +79,7 @@ public class Mountain : MonoBehaviour
     }
 
 
-    // We don't need this below method, the hitboxes are fine and we are done changing it.
+    // We don't need this below method anymore, the hitboxes are fine and we are done changing it.
 
     void OnDrawGizmosSelected()
     {
