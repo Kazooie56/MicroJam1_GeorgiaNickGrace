@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     public void OnGameOverMainMenuPressed()
     {
-        AudioManager.Instance.RestartMusic();
+        AudioManager.Instance.PlayBackgroundMusic();
         UIManager.Instance.ShowMainMenu();
     }
 

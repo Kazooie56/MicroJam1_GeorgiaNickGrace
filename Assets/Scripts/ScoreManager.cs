@@ -63,6 +63,9 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreText();
     }
 
+    // Updates high score
+    // makes the NEW RECORD text appear and disappear at the end
+    // also makes High Score appear in game when a high score is made.
     public void UpdateHighScore()
     {
         // checks if we have a highscore
